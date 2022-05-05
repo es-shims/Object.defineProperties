@@ -1,0 +1,32 @@
+{
+	"name": "object.defineproperties",
+	"version": "0.0.0",
+	"description": "ES spec-compliant `Object.defineProperties` shim/polyfill/replacement that works as far down as ES3",
+	"main": "index.js",
+	"exports": {
+		".": "./index.js",
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/es-shims/Object.defineProperties.git"
+	},
+	"keywords": [
+		"javascript",
+		"ecmascript",
+		"polyfill",
+		"shim",
+		"Object",
+		"defineProperty",
+		"defineProperties"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/es-shims/Object.defineProperties/issues"
+	},
+	"homepage": "https://github.com/es-shims/Object.defineProperties#readme"
+}
