@@ -61,6 +61,33 @@ module.exports = function runTests(defineProperties, t) {
 			s2t.end();
 		});
 
+		st.test('test262: 15.2.3.7-6-a-24', function (s2t) {
+			s2t.teardown(mockProperty(global, 'prop', {
+				value: 11,
+				writable: true,
+				enumerable: true,
+				configurable: true
+			}));
+
+			defineProperties(global, {
+				prop: {
+					value: 12
+				}
+			});
+
+			s2t.deepEqual(
+				Object.getOwnPropertyDescriptor(global, 'prop'),
+				{
+					configurable: true,
+					enumerable: true,
+					value: 12,
+					writable: true
+				}
+			);
+
+			s2t.end();
+		});
+
 		var counter = 0;
 		var target = {};
 		var newProperties = {
