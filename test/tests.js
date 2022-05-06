@@ -47,27 +47,47 @@ module.exports = function runTests(defineProperties, t) {
 		st.test('test262: 15.2.3.7-2-18', function (s2t) {
 			s2t.plan(1);
 
+			var count = 0;
+
 			s2t.teardown(mockProperty(global, 'prop', {
 				get: function () {
 					s2t.equal(this, global, 'getter receiver is as expected');
+					count += 1;
 					return {};
 				},
 				enumerable: true
 			}));
 
+			var thrown = false;
+
 			var obj = {};
-			defineProperties(obj, global);
+			try {
+				defineProperties(obj, global);
+			} catch (e) {
+				thrown = e;
+				if (!(e instanceof TypeError)) {
+					s2t.fail(e); // on node 0.8 with nyc, some of the things on the global cause this to throw
+				}
+			}
+
+			if (thrown !== false && count < 1) {
+				s2t.ok(thrown instanceof TypeError);
+			}
 
 			s2t.end();
 		});
 
 		st.test('test262: 15.2.3.7-6-a-24', function (s2t) {
-			s2t.teardown(mockProperty(global, 'prop', {
-				value: 11,
-				writable: true,
-				enumerable: true,
-				configurable: true
-			}));
+			s2t.teardown(mockProperty(
+				global,
+				'prop',
+				{
+					value: 11,
+					writable: true,
+					enumerable: true,
+					configurable: true
+				}
+			));
 
 			defineProperties(global, {
 				prop: {
