@@ -1,7 +1,7 @@
 'use strict';
 
-var RequireObjectCoercible = require('es-abstract/2021/RequireObjectCoercible');
-var ObjectDefineProperties = require('es-abstract/2021/ObjectDefineProperties');
+var RequireObjectCoercible = require('es-abstract/2022/RequireObjectCoercible');
+var ObjectDefineProperties = require('es-abstract/2022/ObjectDefineProperties');
 
 module.exports = function defineProperties(O, P) {
 	RequireObjectCoercible(O);
