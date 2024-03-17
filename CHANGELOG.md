@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.3](https://github.com/es-shims/Object.defineProperties/compare/v1.0.2...v1.0.3) - 2024-03-17
+
+### Commits
+
+- [Dev Deps] update `aud`, `call-bind`, `has-property-descriptors`, `mock-property`, `npmignore`, `tape` [`66040e2`](https://github.com/es-shims/Object.defineProperties/commit/66040e298c9e04aa8d59672f662388ed08bbd344)
+- [Refactor] replace `es-abstract` with `es-object-atoms` when possible; update `define-properties`, `es-abstract` [`1d955f1`](https://github.com/es-shims/Object.defineProperties/commit/1d955f1ca57f4e6ca6dc1409c317e77a73b726d6)
+
 ## [v1.0.2](https://github.com/es-shims/Object.defineProperties/compare/v1.0.1...v1.0.2) - 2023-08-28
 
 ### Commits
